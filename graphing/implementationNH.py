@@ -70,4 +70,13 @@ def Calcaverage(month):
     average=sum(month)/len(month)
     return average
 
-print (Calcaverage(janflow))
+
+
+monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,augflow,sepflow,octflow,novflow,decflow]
+averagemonthlyflow=[]
+for i in monthlyflow:
+    average=Calcaverage(i)
+    averagemonthlyflow.append(average)
+    
+print(averagemonthlyflow)
+print (average)
