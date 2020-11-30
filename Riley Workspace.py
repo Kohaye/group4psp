@@ -1,15 +1,24 @@
-# Group 4 Problem Solving and Programming Python Script file
-# Adding this comment in VS code at 2:10pm -> Korey Hayes
-# Dan like Pandas
-# Korey updated the CSV file to only contain relevant information
-# to the program columns = year and month of that year
-# Daily Discharge (m3/s) (PARAM = 1)
-# St. Lawrence River At Cornwall
-# This program is designed to read daily flow rates from a csv file and calculate the monthly and
-# yearly totals at a specific monitoring station - St. Lawrence River at Cornwall
+#Graph to show the monthly discharge rate
+
+import matplotlib
+# import matplotlib.pyplot as plt
+
+# Month= ["January","February","March","April","May","June","July","August","September","October","November","December"]
+# Average = ['1','2','3','4','5','6','7','8','9','10','11','12']     #input list that includes all the mean averages
+
+# input_year=1560
+# r= ('The average monthly dischare shown per year', input_year)
+# plt.scatter(Month,Average)
+# plt.ylabel('Average Discharge')
+# plt.xlabel('Month')
+# plt.title(r)
+# plt.show()
+
+
+
 import csv                                  # csv used in week 12 for csv file reading/writing
 import matplotlib                           # (available on college system as indicated on VDI)
-flow = open(r"C:\PSP\Group4\group4psp\StLawrenceFlow.csv")          # opens the file required to read the input
+flow = open(r"C:\GEOM67\GroupProject\group4psp\StLawrenceFlow.csv")          # opens the file required to read the input
 freader = list(csv.reader(flow))			# sets the file that is read to a list of lists					
 flow.close()								# closes the file once the reader is done
 x = 1									    # sets x to 1 because we don't want the first row of the csv
@@ -56,3 +65,24 @@ while x<1115:
             decflow.append(int(freader[x][12]))
     x += 1
 print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
+
+def Calcaverage(month):
+    average=sum(month)/len(month)
+    return average
+def YearTotal(avgmonth):
+    Total = sum(avgmonth)
+    return Total
+
+
+
+monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,julflow,augflow,sepflow,octflow,novflow,decflow]
+averagemonthlyflow=[]
+for i in monthlyflow:
+    average=Calcaverage(i)
+    averagemonthlyflow.append(average)
+
+Yearlyflow = YearTotal(averagemonthlyflow)
+
+
+print(averagemonthlyflow)
+print ("TOTAL YEARLY FLOW: ", Yearlyflow)
