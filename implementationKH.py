@@ -9,6 +9,16 @@
 # yearly totals at a specific monitoring station - St. Lawrence River at Cornwall
 import csv                                  # csv used in week 12 for csv file reading/writing
 import matplotlib                           # (available on college system as indicated on VDI)
+import matplotlib.pyplot as plt
+def plotGraph(input_year, average):
+    Month= ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    r= ('The average monthly discharge shown per year', input_year)
+    plt.scatter(Month, average)
+    plt.ylabel('Average Discharge')
+    plt.xlabel('Month')
+    plt.title(r)
+    return plt.show()
+    
 def Calcaverage(month):
     average=sum(month)/len(month)
     return average
@@ -33,7 +43,7 @@ def main():
     # year number index = 0, jan = 1, feb = 2, ...... , dec = 12
     print("Hello! \n Seems like you want to calculate flow rates!")
     print("What year would you like to calculate the flow rates for?")
-    yearChoice = input("Please enter a year between 1958 and 1993:  ")
+    yearChoice = input("Please enter a year between 1959 and 1993:  ")
     while x<1115:                               # cycle through all of the rows in the table
         if freader[x][0] == yearChoice:         # only append the lists if the item at this index = the inputted year
             if freader[x][1] != "":             # only append the list if there exists a value at this index
@@ -63,7 +73,7 @@ def main():
         x += 1
     # print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',\
     #     sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
-    monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,augflow,sepflow,octflow,novflow,decflow]
+    monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,julflow,augflow,sepflow,octflow,novflow,decflow]
     averagemonthlyflow=[]
     for i in monthlyflow:
         average=Calcaverage(i)
@@ -71,5 +81,6 @@ def main():
     yearAvg = Calcaverage(averagemonthlyflow)
     print(averagemonthlyflow)
     print (yearAvg)
+    print(plotGraph(yearChoice, averagemonthlyflow))
 if __name__ == '__main__':
     main()
