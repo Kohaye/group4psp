@@ -50,7 +50,7 @@ def plotGraph(input_year, average, yearlyav):
     return plt.show()
     
 def Calcaverage(month):
-    average=sum(month)/len(month)
+    average=round(sum(month)/len(month), 2)
     return average
 
 def main():
@@ -106,7 +106,7 @@ def main():
 
     # print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',\
     #     sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
-    
+
     monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,julflow,augflow,sepflow,octflow,novflow,decflow]
     averagemonthlyflow=[]
     for i in monthlyflow:
