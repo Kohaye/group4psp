@@ -28,6 +28,7 @@ decflow =[]
 yearflow =[]                                # create an empty list for the flow of the whole year
 # year number index = 0, jan = 1, feb = 2, ...... , dec = 12
 yearChoice = int(input("Please enter the year you would like to calculate the flow rate for:  "))
+print(freader[1][0])
 while x<1115:
     if freader[x][0] == yearChoice:
         print("maybe this is why")
