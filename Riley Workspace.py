@@ -75,15 +75,13 @@ def YearTotal(avgmonth):
 
 
 
-monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,augflow,sepflow,octflow,novflow,decflow]
+monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,julflow,augflow,sepflow,octflow,novflow,decflow]
 averagemonthlyflow=[]
 for i in monthlyflow:
     average=Calcaverage(i)
     averagemonthlyflow.append(average)
 
 Yearlyflow = YearTotal(averagemonthlyflow)
-
-
 
 
 print(averagemonthlyflow)
