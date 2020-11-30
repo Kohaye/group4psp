@@ -115,17 +115,19 @@ def main():
     yearAvg = Calcaverage(averagemonthlyflow)
     print(averagemonthlyflow)
     print (yearAvg)
-    print(plotGraph(yearChoice, averagemonthlyflow, yearAvg))
+    # print(plotGraph(yearChoice, averagemonthlyflow, yearAvg))
 
 
     print("---------------------------------------------------------------------------------")
     print()
-    print("The Average Monthly Discharge of the St. Lawrence River \n at Cornwall Monitoring Station for the Year + " " + r)
+    print("The Average Monthly Discharge (m³/s) of the St. Lawrence River \n at Cornwall Monitoring Station for the Year" + " " + yearChoice)
     print()
     # Display the columns headers
-    print("January\tFebruary\tMarch\tApril\tJune\tJuly\tAugust\tSeptember\tOctober\tNovember\tDecember\tTotal Yearly Average")
+    print("January\t\t February\t March\t\t April\t\t June\t\t July")
     print(averagemonthlyflow[0],"\t", averagemonthlyflow[1],"\t", averagemonthlyflow[2],"\t", averagemonthlyflow[3],"\t", \
-        averagemonthlyflow[5],"\t", averagemonthlyflow[6],"\t", averagemonthlyflow[7],"\t", averagemonthlyflow[8],"\t", \
+        averagemonthlyflow[5], "\t", averagemonthlyflow[6],"\n")
+    print("August\t\t September\t October\t November\t December\t Total Yearly Average")
+    print(averagemonthlyflow[7],"\t", averagemonthlyflow[8],"\t", \
         averagemonthlyflow[9],"\t", averagemonthlyflow[10],"\t", averagemonthlyflow[11],"\t", yearAvg)
     print("---------------------------------------------------------------------------------")
 
