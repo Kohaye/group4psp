@@ -28,9 +28,9 @@ decflow =[]
 yearflow =[]                                # create an empty list for the flow of the whole year
 # year number index = 0, jan = 1, feb = 2, ...... , dec = 12
 yearChoice = input("Please enter the year you would like to calculate the flow rate for:  ")
-while x<1115:
-    if freader[x][0] == yearChoice:
-        if freader[x][1] != "":       # only append the list if there exists a value at this index
+while x<1115:                               # cycle through all of the rows in the table
+    if freader[x][0] == yearChoice:         # only append the lists if the item at this index = the inputted year
+        if freader[x][1] != "":             # only append the list if there exists a value at this index
             janflow.append(int(freader[x][1]))
         if freader[x][2] !="":
             febflow.append(int(freader[x][2]))
@@ -55,4 +55,5 @@ while x<1115:
         if freader[x][12] !="":
             decflow.append(int(freader[x][12]))
     x += 1
-print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
+print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',\
+    sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
