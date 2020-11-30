@@ -3,6 +3,10 @@
 # Dan like Pandas
 # Korey updated the CSV file to only contain relevant information
 # to the program columns = year and month of that year
+# Daily Discharge (m3/s) (PARAM = 1)
+# St. Lawrence River At Cornwall
+# This program is designed to read daily flow rates from a csv file and calculate the monthly and
+# yearly totals at a specific monitoring station - St. Lawrence River at Cornwall
 import csv                                  # csv used in week 12 for csv file reading/writing
 import matplotlib                           # (available on college system as indicated on VDI)
 flow = open(r"StLawrenceFlow.csv")          # opens the file required to read the input
