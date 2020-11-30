@@ -10,13 +10,16 @@
 import csv                                  # csv used in week 12 for csv file reading/writing
 import matplotlib                           # (available on college system as indicated on VDI)
 import matplotlib.pyplot as plt
-def plotGraph(input_year, average):
+def plotGraph(input_year, average, yearlyav):
+    yearlyav = round(yearlyav, 2)
     Month= ["January","February","March","April","May","June","July","August","September","October","November","December"]
-    r= ('The average monthly discharge shown per year', input_year)
+    r= input_year
     plt.scatter(Month, average)
-    plt.ylabel('Average Discharge')
+    plt.ylabel('Average Discharge (m³/s)')
     plt.xlabel('Month')
-    plt.title(r)
+    plt.title('The Average Monthly Discharge of The St. Lawrence River \n At Cornwall Monitoring Station for the Year' + ' ' + r)
+    plt.text(Month[10], 7200, 'Yearly Avg', yearlyav, fontsize = 9)
+    # plt.text(Month[10], 7000, yearlyav)
     return plt.show()
     
 def Calcaverage(month):
@@ -81,6 +84,6 @@ def main():
     yearAvg = Calcaverage(averagemonthlyflow)
     print(averagemonthlyflow)
     print (yearAvg)
-    print(plotGraph(yearChoice, averagemonthlyflow))
+    print(plotGraph(yearChoice, averagemonthlyflow, yearAvg))
 if __name__ == '__main__':
     main()
