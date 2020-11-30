@@ -63,33 +63,13 @@ def main():
         x += 1
     # print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',\
     #     sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
-    # janavg = Calcaverage(janflow)
-    # yearflow.append(janavg)
-    # febavg = Calcaverage(febflow)
-    # yearflow.append(febavg)
-    # yearflow.append(janflow)
-    # yearflow.append(febflow)
-    # yearflow.append(marflow)
-    # yearflow.append(aprflow)
-    # yearflow.append(mayflow)
-    # yearflow.append(junflow)
-    # yearflow.append(julflow)
-    # yearflow.append(augflow)
-    # yearflow.append(sepflow)
-    # yearflow.append(octflow)
-    # yearflow.append(novflow)
-    # yearflow.append(decflow)
-    # monthAvg = []
-    # for index in yearflow:
-    #     monthAvg.append(Calcaverage(yearflow[index]))
-    # print(monthAvg)
     monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,augflow,sepflow,octflow,novflow,decflow]
     averagemonthlyflow=[]
     for i in monthlyflow:
         average=Calcaverage(i)
         averagemonthlyflow.append(average)
-    
+    yearAvg = Calcaverage(averagemonthlyflow)
     print(averagemonthlyflow)
-    print (average)
+    print (yearAvg)
 if __name__ == '__main__':
     main()
