@@ -55,5 +55,5 @@ while x<1115:                               # cycle through all of the rows in t
         if freader[x][12] !="":
             decflow.append(int(freader[x][12]))
     x += 1
-print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',\
-    sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
+# print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',\
+#     sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
