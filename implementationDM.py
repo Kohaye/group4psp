@@ -1,36 +1,41 @@
-# Program File Name: implementation.py
+# Program File Name: StLawrenceRiverMonthlyFlowRates.py
 # Authors: Group 4 - Dana McKee, Korey Hayes, Riley Sweeney, Natalia Hrynko
 # Date: November 30, 2020
 
-# Code Contribution (to application):
+# Program Purpose: The program is designed to read daily flow rates from a CSV file 
+# and calculate the average monthly and yearly flow rates totals at a specific monitoring station, 
+# St. Lawrence River, at Cornwall annd display data as a table and graph.
 
-# Program Purpose: "why/purpose of the code" The program is designed to read daily flow rates
-# from a CSV file and calculate the monthly and yearly flow rates totals at a specific monitoring station, 
-# St. Lawrence River at Cornwall
+# Program Structure: Modules CSV and mathplotlib are imported.  Three functions are defined (plotGraph, Calcaverage, main). 
+# CSV file is read. User input for year. Monthly and yearly flow rate average are calculated. Table with output values is produced.
+# Graph with output values is produced. 
 
-# Assumptions: User wants daily flow rates from the St. Lawrence River at Cornwall
-
-# Program Structure:
-
-# Assumptions (affecting Program Structure): None
+# Assumptions: None
 
 # Limitations (Plans): Data is limited to the years 1958-1993 and only from the specific river,
-# St. Lawernece River at specific monitoring station, St. Lawrence River at Cornwall
+# St. Lawernece River, at specific monitoring station, Cornwall
 
-# Special Cases and Known Problems: 1958 cannot be run in the program due to no data being provided
-# for the entire months of Jan-Jun. This would cause a zero division error during the  ???
+# Special Cases and Known Problems: 
+# 1. 1958 cannot be run in the program due to no data being provided for the entire months of Jan-Jun. 
+# This is handled by input statement and exception handler. 
+# 2. If the user wants information for multiple years, they must restart the program due to limitations caused the matplotlib module.
+# 3. The CSV file must be formatted so that  the year and the months are the only columns.
 
-# User Inputs: Year from user, Daily Discharge (m3/s) from CSV file
-# Outputs: Average Monthly Discharge (m3/s), and Total Yearly Discharge (m3/s) from CSV file
+# Inputs: Year from user, Daily Discharge (m3/s) from CSV file
+# Outputs: Average Monthly Discharge (m3/s), and Total Average Yearly Discharge (m3/s)
 
 # References: Scatterplot and Matplotlib module - https://www.w3schools.com/python/python_ml_scatterplot.asp.
-# https://matplotlib.org/tutorials/introductory/pyplot.html, CSV Module: Week 11 File Access_2020/pdf 
+# https://matplotlib.org/tutorials/introductory/pyplot.html, CSV Module: Week 11 File Access_2020.pdf (Karen Whillans), 
+# Table Formatting: Whale Mapping Version 2.2 Karen Whillans, https://www.educba.com/python-print-table/, 
+# CSV Data File: https://wateroffice.ec.gc.ca/search/historical_e.html
 
-# 
-# https://stackoverflow.com/questions/39032720/formatting-lists-into-columns-of-a-table-output-python-3
-# https://www.educba.com/python-print-table/
-
-# Contributions (to code): 
+# Code Contributions to implimentation:
+# Dana: Output table
+# Natalia: matplotlib module, plotGraph, and Calcaverage function
+# Riley: plotGraph formatting
+# Korey: Main function (csv reader, csv formatting, empty lists, population of lists)
+# Group: As a group we refined, commented and reworked everyones code. In addition, as a group if one individual was
+# the main coder, the rest of the group worked to problem solve and find solutions and debug. 
 
 import csv                                  # csv used in week 12 for csv file reading/writing
 import matplotlib                           # (available on college system as indicated on VDI)
