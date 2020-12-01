@@ -88,13 +88,13 @@ def main():
 
         # print(janflow, '\n', febflow, '\n',marflow, '\n',aprflow, '\n',mayflow, '\n',junflow, '\n',julflow, '\n',augflow, '\n',\
         #     sepflow, '\n',octflow, '\n',novflow, '\n',decflow)
-
+        # create a list of the monthly results
         monthlyflow=[janflow,febflow,marflow,aprflow,mayflow,junflow,julflow,augflow,sepflow,octflow,novflow,decflow]
-        averagemonthlyflow=[]
-        for i in monthlyflow:
-            average=Calcaverage(i)
-            averagemonthlyflow.append(average)
-        yearAvg = Calcaverage(averagemonthlyflow)
+        averagemonthlyflow=[]                       # create an empty list for average values
+        for i in monthlyflow:                       # open a for loop to cycle through the index of the months
+            average=Calcaverage(i)                  # call the average calculation function
+            averagemonthlyflow.append(average)      # append the average list with the newly calculated value
+        yearAvg = Calcaverage(averagemonthlyflow)   # get a yearly average from the calculated monthly averages
         print(averagemonthlyflow)
         print (yearAvg)
         # print(plotGraph(yearChoice, averagemonthlyflow, yearAvg))
@@ -104,7 +104,7 @@ def main():
         print()
         print("The Average Monthly Discharge (m³/s) of the St. Lawrence River \n at Cornwall Monitoring Station for the Year" + " " + yearChoice)
         print()
-        # Display the columns headers
+        # Display the columns headers and calculaet averages
         print("January\t\t February\t March\t\t April\t\t June\t\t July")
         print(averagemonthlyflow[0],"\t", averagemonthlyflow[1],"\t", averagemonthlyflow[2],"\t", averagemonthlyflow[3],"\t", \
             averagemonthlyflow[5], "\t", averagemonthlyflow[6],"\n")
@@ -112,6 +112,7 @@ def main():
         print(averagemonthlyflow[7],"\t", averagemonthlyflow[8],"\t", \
             averagemonthlyflow[9],"\t", averagemonthlyflow[10],"\t", averagemonthlyflow[11],"\t", yearAvg)
         print("---------------------------------------------------------------------------------")
+
     except TypeError:
         print("What are you trying to do here?")
     except ValueError: 
