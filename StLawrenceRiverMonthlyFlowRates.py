@@ -127,7 +127,7 @@ def main():
         yearAvg = Calcaverage(averagemonthlyflow)   # get a yearly average from the calculated monthly averages
         print(averagemonthlyflow)
         print (yearAvg)
-        # print(plotGraph(yearChoice, averagemonthlyflow, yearAvg))
+        print(plotGraph(yearChoice, averagemonthlyflow, yearAvg))
 
         # beginning of the end print statements
         print("---------------------------------------------------------------------------------")
